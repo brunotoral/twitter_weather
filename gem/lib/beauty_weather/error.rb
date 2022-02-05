@@ -3,5 +3,5 @@ module BeautyWeather
 
   class Unauthorized < Error ; end
 
-  class ServiceUnavaible < Error ; end
+  class ServiceUnavailable < Error ; end
 end
