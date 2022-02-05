@@ -8,7 +8,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'dry-rails', '~> 0.3.0'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'httparty'
 # gem 'jbuilder', '~> 2.7'
 
 
@@ -17,6 +17,9 @@ group :development, :test do
   gem 'fabrication'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.2'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'simplecov'
+  gem 'webmock'
+  gem 'dotenv-rails'
 end
 
 group :development do
