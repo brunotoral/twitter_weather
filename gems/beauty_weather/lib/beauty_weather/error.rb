@@ -3,5 +3,7 @@ module BeautyWeather
 
   class Unauthorized < Error ; end
 
+  class BadRequest < Error ; end
+
   class ServiceUnavailable < Error ; end
 end

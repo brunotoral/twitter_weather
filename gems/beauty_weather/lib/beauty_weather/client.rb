@@ -2,13 +2,14 @@ module BeautyWeather
   class Client
     attr_accessor :uri, :adapter
 
-    def initialize(adapter: HTTParty, uri: 'https://api.openweathermap.org/data/2.5' )
+    def initialize(adapter: HTTParty, uri: BeautyWeather.uri )
       @adapter = adapter
       @uri = uri
     end
 
     def get(path, options = {})
       response = adapter.get(complete_path(path), query: options)
+
       handle_response response
     end
 
@@ -22,6 +23,8 @@ module BeautyWeather
         raise BeautyWeather::Unauthorized, response.code
       when  503
         raise BeautyWeather::ServiceUnavailable, response.code
+      when 400
+        raise BeautyWeather::BadRequest, response.code
       else
         raise BeautyWeather::Error, response.code
       end

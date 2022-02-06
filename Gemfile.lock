@@ -1,3 +1,9 @@
+PATH
+  remote: gems/beauty_weather
+  specs:
+    beauty_weather (0.1.0)
+      httparty
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -248,12 +254,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  beauty_weather!
   bootsnap (>= 1.4.4)
   byebug
   dotenv-rails
   dry-rails (~> 0.3.0)
   fabrication
-  httparty
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
