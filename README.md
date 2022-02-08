@@ -58,9 +58,9 @@ Caso a estrutura esteja correta, um worker será executado e retornará status *
 ### Instalação
 
 1. Tenha certeza de ter todos os pré-requisitos instalados.
-1. Clone o repositório `git clone git@github.com:brunotoral/chown.git`
+1. Clone o repositório `git clone git@github.com:brunotoral/twitter_weather.git`
 1. Construa o container de desenvolvimento `docker-compose build`. isso irá criar uma imagem
-docker nomeada de `chown-dev`com todas as ferramentas requeridas.
+docker nomeada de `twitter_weather-dev`com todas as ferramentas requeridas.
 1. Instale as dependência node com `docker-compose run runner yarn install`
 1. Faça o setup do projeto com `docker-compose run runner bin/setup`
 1. Inicie o servidor de desenvolvimento `docker-compose run rails`
