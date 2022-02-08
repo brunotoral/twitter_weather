@@ -14,7 +14,7 @@ module Api
       def create
         ForecastTweetCreatorJob.perform_later safe_params.to_h
 
-        render json: { status: 201, message: 'Success! Tweet scheduled.' }
+        render json: { message: 'Success! Tweet scheduled.' }, status: :created
       end
     end
   end
