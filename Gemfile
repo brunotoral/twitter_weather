@@ -9,6 +9,8 @@ gem 'puma', '~> 5.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'dry-rails', '~> 0.3.0'
 gem 'beauty_weather', path: './gems/beauty_weather'
+gem 'omniauth-twitter'
+gem 'twitter'
 # gem 'jbuilder', '~> 2.7'
 
 

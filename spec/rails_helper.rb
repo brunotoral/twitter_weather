@@ -31,3 +31,9 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+def file_data(name)
+  file = File.read(Rails.root.to_s + "/spec/fixtures/#{name}.rb")
+
+  JSON.parse file, symbolize_names: true
+end
