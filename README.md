@@ -9,7 +9,7 @@
   </a>
 </p>
 
-*Twitter Weather* é uma API de integração entre o[OpenWeathere](https://openweathermap.org/) e o [Twitter](https://twitter.com/) .
+*Twitter Weather* é uma API de integração entre o[OpenWeathere](https://openweathermap.org/) e o [Twitter](https://twitter.com/) .  A integração com o OpenWeather é feita com a gem BeautyWeather que, por sua vez, é uma gem privativa e exclusiva do projeto.
 
 ## Experimente a aplicação
 
