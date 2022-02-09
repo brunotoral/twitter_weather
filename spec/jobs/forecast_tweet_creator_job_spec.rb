@@ -6,6 +6,7 @@ RSpec.describe ForecastTweetCreatorJob, type: :job do
   describe '#perform_later' do
     it 'Creates a twitter' do
       ActiveJob::Base.queue_adapter = :test
+
       expect {
         ForecastTweetCreatorJob.perform_later(params)
       }.to have_enqueued_job

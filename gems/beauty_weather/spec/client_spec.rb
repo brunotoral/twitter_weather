@@ -19,4 +19,44 @@ RSpec.describe BeautyWeather::Client do
 
     expect(client.uri).to eq 'www.foobar.com'
   end
+
+  it 'raises bad request error' do
+    adapter = double(:adapter)
+    client = described_class.new adapter: adapter
+    fake_response = double(:response, code: 401)
+
+    allow(adapter).to receive(:get).and_return(fake_response)
+
+    expect{ client.get('/foobar') }.to raise_error BeautyWeather::Unauthorized
+  end
+
+  it 'raises unavailable error' do
+    adapter = double(:adapter)
+    client = described_class.new adapter: adapter
+    fake_response = double(:response, code: 503)
+
+    allow(adapter).to receive(:get).and_return(fake_response)
+
+    expect{ client.get('/foobar') }.to raise_error BeautyWeather::ServiceUnavailable
+  end
+
+  it 'raises bad request error' do
+    adapter = double(:adapter)
+    client = described_class.new adapter: adapter
+    fake_response = double(:response, code: 400)
+
+    allow(adapter).to receive(:get).and_return(fake_response)
+
+    expect{ client.get('/foobar') }.to raise_error BeautyWeather::BadRequest
+  end
+
+  it 'raises error' do
+    adapter = double(:adapter)
+    client = described_class.new adapter: adapter
+    fake_response = double(:response, code: 500)
+
+    allow(adapter).to receive(:get).and_return(fake_response)
+
+    expect{ client.get('/foobar') }.to raise_error BeautyWeather::Error
+  end
 end
