@@ -20,7 +20,7 @@ RSpec.describe BeautyWeather::Client do
     expect(client.uri).to eq 'www.foobar.com'
   end
 
-  it 'raises bad request error' do
+  it 'raises Unauthorized error' do
     adapter = double(:adapter)
     client = described_class.new adapter: adapter
     fake_response = double(:response, code: 401)
